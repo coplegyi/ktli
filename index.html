@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dark Oil</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Istok+Web:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+:root {
+    --blue: #007ac2;
+    --blue-dark: #003A7A;
+    --orange: #ff7b00;
+    --text: #1f1f1f;
+    --gray: #f4f7fb;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #F3F6FA;
+    padding-top: 80px;
+    color: var(--text);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    background: var(--blue);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    width: clamp(55px, 4vw, 85px);
+    height: auto;
+}
+
+.nav-link {
+    font-size: 20px;
+    margin: 0 14px;
+    color: white !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+.phone {
+    font-size: 20px;
+    color: #fff;
+    text-align: right;
+}
+
+.phone small {
+    display: block;
+    font-size: 12px;
+    color: #eaeaea;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    padding: 60px 0;
+}
+
+.hero-title {
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.hero-title span {
+    color: #F11D1D;
+}
+
+.hero-subtitle {
+    font-size: 32px;
+    margin: 10px 0 30px;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 950px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-main {
+    background: var(--blue);
+    color: #fff;
+    padding: 14px 50px;
+    border-radius: 40px;
+    border: none;
+    transition: .3s;
+    font-weight: 600;
+}
+
+.btn-main:hover {
+    background: var(--blue-dark);
+}
+
+/* =========================
+   CALC BOX
+========================= */
+.calc-box {
+    background: linear-gradient(145deg, #007ac2, #005b95);
+    padding: 24px;
+    border-radius: 18px;
+    max-width: 360px;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.calc-title {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.calc-input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.calc-input:focus {
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+}
+
+.calc-box .btn-main {
+    background: #fff;
+    color: var(--blue);
+}
+
+.calc-box .btn-main:hover {
+    background: #ececec;
+}
+
+.calc-result {
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+/* =========================
+   SECTION
+========================= */
+.section {
+    background: #fff;
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.text-block {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.text-block span {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.list {
+    margin-top: 25px;
+    padding-left: 20px;
+}
+
+.list li {
+    margin-bottom: 14px;
+    line-height: 1.7;
+}
+
+.section-img {
+    max-width: 550px;
+    width: 100%;
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: 45px;
+}
+
+/* =========================
+   ADVANTAGES
+========================= */
+.advantages {
+    padding: 90px 0;
+    background: var(--gray);
+}
+
+.adv-card {
+    background: #fff;
+    border-radius: 22px;
+    padding: 35px 30px;
+    height: 100%;
+    transition: .3s;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.adv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.adv-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(0,122,194,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: var(--blue);
+    margin-bottom: 25px;
+}
+
+.adv-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.adv-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* =========================
+   STEPS
+========================= */
+.steps {
+    padding: 90px 0;
+    background: #fff;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.step-number {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    border-radius: 14px;
+    background: var(--blue);
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 18px;
+    box-shadow: 0 8px 20px rgba(30, 47, 196, 0.25);
+}
+
+.step-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 26px;
+    }
+
+    .calc-box {
+        margin: 0 auto;
+    }
+
+    .phone {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+
+    .adv-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero-title {
+        font-size: 34px;
+    }
+
+    .hero-subtitle {
+        font-size: 22px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .advantages,
+    .steps {
+        padding: 70px 0;
+    }
+
+    .step-text {
+        font-size: 16px;
+    }
+
+    .adv-card {
+        padding: 28px 22px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+
+<div class="container">
+
+    <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="img/logo.png.png" class="logo me-2">
+
+        <div class="hero-title m-0 fs-2">
+            Dark <span>Oil</span>
+        </div>
+    </a>
+
+    <button class="navbar-toggler" type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#menu">
+
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="menu">
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Услуги</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">О котельных</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Контакты</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="phone d-none d-lg-block ms-auto">
+        +7 (903) 595-96-87
+        <small>Николаев Дмитрий Александрович</small>
+    </div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="layout">
+
+<div class="row align-items-center">
+
+    <div class="col-lg-7 text-center mb-5 mb-lg-0">
+        <img src="img/container.png.png" class="hero-img">
+    </div>
+
+    <div class="col-lg-5">
+
+        <div class="hero-title">
+            Dark <span>Oil</span>
+        </div>
+
+        <div class="hero-subtitle">
+            Аренда дизельных котельных
+        </div>
+
+        <div class="calc-box">
+
+    <div class="calc-title">
+        Рассчитать стоимость
+    </div>
+
+    <!-- МОЩНОСТЬ -->
+    <select class="calc-input" id="power">
+        <option value="500">Мощность 500 кВт</option>
+        <option value="800" selected>Мощность 800 кВт</option>
+        <option value="1000">Мощность 1 МВт</option>
+        <option value="2000">Мощность 2 МВт</option>
+        <option value="5000">Мощность 5 МВт</option>
+    </select>
+
+    <!-- СРОК -->
+    <input 
+    type="number"
+    id="months"
+    class="calc-input"
+    placeholder="Срок аренды (мес.)"
+    value="12">
+
+    <!-- ГОРОД -->
+    <input 
+    type="text"
+    class="calc-input"
+    placeholder="Ваш город">
+
+    <button class="btn-main w-100" onclick="calculate()">
+        Рассчитать
+    </button>
+
+    <!-- РЕЗУЛЬТАТ -->
+    <div id="result" class="calc-result"></div>
+
+</div>
+
+    </div>
+
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+
+<div class="layout">
+
+    <div class="section-title">
+        Аренда блочно-модульных котельных
+    </div>
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-6 mb-5 mb-lg-0">
+
+            <div class="text-block">
+
+                Компания «Дарк <span>Ойл</span>» предоставляет мобильные
+                дизельные котельные мощностью от 500 кВт до 10 МВт
+                для строительных площадок, промышленных объектов,
+                жилых комплексов и временного теплоснабжения.
+
+                <br><br>
+
+                В стандартную комплектацию котельной 1 МВт входит:
+
+            </div>
+
+            <ol class="list">
+                <li>
+                    Стальные водогрейные котлы высокой производительности.
+                </li>
+
+                <li>
+                    Современные дизельные горелки европейского уровня.
+                </li>
+
+                <li>
+                    Надежные насосные группы и системы автоматизации.
+                </li>
+            </ol>
+
+        </div>
+
+        <div class="col-lg-6 text-center">
+
+            <img src="img/container2.png.png" class="section-img">
+
+        </div>
+
+    </div>
+
+    <div class="center-btn">
+        <button class="btn-main">
+            Узнать стоимость
+        </button>
+    </div>
+
+</div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="advantages">
+
+<div class="layout">
+
+    <div class="section-title">
+        Почему выбирают аренду котельных Dark Oil
+    </div>
+
+    <div class="row g-4">
+
+        <!-- CARD 1 -->
+        <div class="col-lg-4 col-md-6">
+
+            <div class="adv-card">
+
+                <div class="adv-icon">
+                    🚚
+                </div>
+
+                <div class="adv-title">
+                    Быстрая доставка
+                </div>
+
+                <div class="adv-text">
+                    Оперативно доставляем и подключаем котельные
+                    на объекты в Москве и области. Подходит
+                    для временного отопления, стройплощадок
+                    и аварийного теплоснабжения.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col-lg-4 col-md-6">
+
+            <div class="adv-card">
+
+                <div class="adv-icon">
+                    💰
+                </div>
+
+                <div class="adv-title">
+                    Экономия бюджета
+                </div>
+
+                <div class="adv-text">
+                    Аренда позволяет избежать крупных затрат
+                    на покупку оборудования и обслуживание.
+                    Вы получаете полностью готовую котельную
+                    без дополнительных вложений.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-lg-4 col-md-6 mx-md-auto">
+
+            <div class="adv-card">
+
+                <div class="adv-icon">
+                    ⚡
+                </div>
+
+                <div class="adv-title">
+                    Высокая эффективность
+                </div>
+
+                <div class="adv-text">
+                    Современные дизельные котельные отличаются
+                    стабильной работой, высоким КПД и низким
+                    расходом топлива, обеспечивая надежное
+                    теплоснабжение объекта.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- STEPS -->
+<section class="steps">
+
+<div class="layout">
+
+    <div class="section-title">
+        Аренда котельной под ключ
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-4">
+
+            <div class="step-item">
+                <div class="step-number">01</div>
+
+                <div class="step-text">
+                    Доставка оборудования на объект
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="step-item">
+                <div class="step-number">02</div>
+
+                <div class="step-text">
+                    Монтаж и подключение системы
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="step-item">
+                <div class="step-number">03</div>
+
+                <div class="step-text">
+                    Пусконаладочные работы
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="step-item">
+                <div class="step-number">04</div>
+
+                <div class="step-text">
+                    Круглосуточный контроль оборудования
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="step-item">
+                <div class="step-number">05</div>
+
+                <div class="step-text">
+                    Регулярная поставка дизельного топлива
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="step-item">
+                <div class="step-number">06</div>
+
+                <div class="step-text">
+                    Демонтаж после завершения аренды
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function calculate() {
+
+    let power = Number(document.getElementById("power").value);
+    let months = Number(document.getElementById("months").value);
+
+    if (months <= 0 || isNaN(months)) {
+
+        document.getElementById("result").innerText =
+            "Введите корректный срок";
+
+        return;
+    }
+
+    let pricePerKw = 150;
+
+    let total = power * pricePerKw * months;
+
+    document.getElementById("result").innerText =
+        "Стоимость: " + total.toLocaleString("ru-RU") + " ₽";
+}
+</script>
+</body>
+</html>
